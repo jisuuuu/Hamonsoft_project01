@@ -1,7 +1,7 @@
-"""Hamonsoft_project01 URL Configuration
+"""project_1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+from django.conf import settings
+from . import views
+from django.conf.urls.static import static
 
+app_name = 'project_1'
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^$', views.Project_main.as_view(), name='project_1'),
+    url(r'^[0-9]+/dblist$', views.Show_list.as_view(), name='dblist'),
+    
+    path('main', views.main, name='main'),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
