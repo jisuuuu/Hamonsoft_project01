@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <title>RESULT PAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>IP ADDRESS</B></td>
+            <td><B>PORT NUMBER</B></td>
+            <td><B>STATE</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for list in test1_list %}
+        <tr>
+            <td>{{list.ip_address}}</td>
+            <td>{{list.port_num}}</td>
+            <td>{{list.state}}</td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</body>
+</html>
